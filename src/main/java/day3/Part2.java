@@ -58,7 +58,7 @@ public class Part2
         int sum = 0;
         for (int i = 1; i < schematic.size() - 1; i++)
         {
-            List<List<Integer>> allPartNumbers = new ArrayList<>();
+//            List<List<Integer>> allPartNumbers = new ArrayList<>();
 
             String line1 = schematic.get(i - 1);
             String line2 = schematic.get(i);
@@ -69,21 +69,19 @@ public class Part2
                 char c = line2.charAt(j);
                 if (c == '*')
                 {
-//                    InspectionResult r = inspectNeighbours(line1, line2, line3, j);
                     List<Integer> partNumbers = inspectNeighbours(line1, line2, line3, j);
-                    allPartNumbers.add(partNumbers);
-//                    if (r != null)
-//                        sum += r.number1 * r.number2;
+//                    allPartNumbers.add(partNumbers);
                     if (partNumbers.size() == 2)
                         sum += partNumbers.getFirst() * partNumbers.getLast();
                 }
             }
-            System.out.println("############################");
-            System.out.println(line1);
-            System.out.println(line2);
-            System.out.println(line3);
-            System.out.println(allPartNumbers.stream().map(l -> l.stream().map(Object::toString).collect(Collectors.joining(",", "[", "]"))).collect(Collectors.joining("\n")));
-            System.out.println("############################");
+            // for debugging
+            //            System.out.println("############################");
+            //            System.out.println(line1);
+            //            System.out.println(line2);
+            //            System.out.println(line3);
+            //            System.out.println(allPartNumbers.stream().map(l -> l.stream().map(Object::toString).collect(Collectors.joining(",", "[", "]"))).collect(Collectors.joining("\n")));
+            //            System.out.println("############################");
         }
 
         return sum;
