@@ -2,9 +2,6 @@ package day5;
 
 
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public record Almanac(long[] seeds, CombinedConverter seedToSoil, CombinedConverter soilToFertilizer,
                       CombinedConverter fertilizerToWater, CombinedConverter waterToLight, CombinedConverter lightToTemp,
