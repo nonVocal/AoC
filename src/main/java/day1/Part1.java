@@ -6,7 +6,6 @@ import java.nio.file.Path;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.OptionalInt;
-import java.util.function.Function;
 
 public class Part1
 {
@@ -18,8 +17,7 @@ public class Part1
         try (var stream = Files.lines(Path.of(args[0])))
         {
             int result = stream
-                    .map(Part1::computeLineScore)
-                    .mapToInt(i -> i)
+                    .mapToInt(Part1::computeLineScore)
                     .sum();
 
             System.out.println(result);
