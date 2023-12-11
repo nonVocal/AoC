@@ -15,7 +15,7 @@ public class Part2
     public static void main(String[] args) throws IOException
     {
         Instant start = Instant.now();
-        System.out.println("DAY 9 - PART 1");
+        System.out.println("DAY 9 - PART 2");
 
         try (var stream = Files.lines(Path.of(args[0])))
 //        try (var stream =
